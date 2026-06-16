@@ -47,7 +47,7 @@ import { ref, computed, onMounted } from 'vue';
 // 响应式数据
 const newTodo = ref('');
 const todos = ref([]);
-const apiUrl = 'http://localhost:8080/api/todos';
+const apiUrl = '/api/todos';
 const userId = 1; // 默认用户ID
 
 // 计算属性：已完成的待办事项数量

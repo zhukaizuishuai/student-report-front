@@ -79,7 +79,7 @@ const homeworkCompleted = ref(0);
 const reportResult = ref('');
 const history = ref([]);
 // API地址配置 - 根据环境自动切换
-const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080/api/reports';
+const apiUrl = import.meta.env.VITE_API_URL || '/api/reports';
 
 // 生成周报
 const generateReport = async () => {
