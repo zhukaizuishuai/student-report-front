@@ -1,3 +1,7 @@
 name = "student-report-front"
 compatibility_date = "2026-06-17"
-pages_build_output_dir = "dist"
+main = "public/_worker.js"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
