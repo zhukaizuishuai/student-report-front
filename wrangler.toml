@@ -1,6 +1,2 @@
 name = "student-report-front"
-type = "pages"
-
-[pages]
-build_command = "npm run build"
-pages_build_output_dir = "dist"
+compatibility_date = "2026-06-17"
