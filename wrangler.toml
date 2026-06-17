@@ -1,0 +1,6 @@
+name = "student-report-front"
+type = "pages"
+
+[pages]
+build_command = "npm run build"
+pages_build_output_dir = "dist"
