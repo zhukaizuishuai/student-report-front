@@ -1,7 +1,0 @@
-name = "student-report-front"
-compatibility_date = "2026-06-17"
-main = "public/_worker.js"
-
-[assets]
-directory = "./dist"
-binding = "ASSETS"
