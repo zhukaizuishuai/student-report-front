@@ -41,7 +41,7 @@ dist/
 在本地（你的 Mac）执行：
 
 ```bash
-scp -r dist/* root@121.199.34.113:/usr/share/nginx/html/
+scp -r dist/* root@你的服务器IP:/usr/share/nginx/html/
 ```
 
 > 如果 nginx 网站根目录不是 `/usr/share/nginx/html`，请替换为实际路径。
@@ -49,7 +49,7 @@ scp -r dist/* root@121.199.34.113:/usr/share/nginx/html/
 ### 2. 查看服务器文件确认
 
 ```bash
-ssh root@121.199.34.113 "ls /usr/share/nginx/html"
+ssh root@你的服务器IP "ls /usr/share/nginx/html"
 ```
 
 ---
@@ -59,7 +59,7 @@ ssh root@121.199.34.113 "ls /usr/share/nginx/html"
 ### 1. SSH 登录服务器
 
 ```bash
-ssh root@121.199.34.113
+ssh root@你的服务器IP
 ```
 
 ### 2. 编辑 nginx 配置
@@ -119,7 +119,7 @@ ufw allow 80
 
 ## 五、验证部署
 
-打开浏览器访问：`http://121.199.34.113`
+打开浏览器访问：`http://你的服务器IP`
 
 - 页面能正常加载
 - 生成周报 / 待办事项 等操作能正常调用后端 API
@@ -134,7 +134,7 @@ ufw allow 80
 
 ```bash
 npm run build
-scp -r dist/* root@121.199.34.113:/usr/share/nginx/html/
+scp -r dist/* root@你的服务器IP:/usr/share/nginx/html/
 ```
 
 无需重启 nginx，文件覆盖后立即生效。
@@ -164,6 +164,6 @@ nginx 缺少 `try_files $uri $uri/ /index.html;` 配置（SPA 路由需要）。
 scp 的目标目录权限不足，可以先上传到 `/tmp` 再复制过去：
 
 ```bash
-scp -r dist/* root@121.199.34.113:/tmp/
-ssh root@121.199.34.113 "cp -r /tmp/* /usr/share/nginx/html/"
+scp -r dist/* root@你的服务器IP:/tmp/
+ssh root@你的服务器IP "cp -r /tmp/* /usr/share/nginx/html/"
 ```

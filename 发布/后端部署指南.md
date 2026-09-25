@@ -112,7 +112,7 @@ target/student-report-backend-0.0.1-SNAPSHOT.jar   (约 39 MB)
 ### 在本地（你的 Mac）执行
 
 ```bash
-scp target/student-report-backend-0.0.1-SNAPSHOT.jar root@121.199.34.113:/opt/
+scp target/student-report-backend-0.0.1-SNAPSHOT.jar root@你的服务器IP:/opt/
 ```
 
 ---
@@ -196,12 +196,12 @@ tail -f /var/log/student-report-backend.log
 
 ## 七、CORS 配置
 
-当前后端的 CORS 配置（`application.properties`）限制允许的来源为 `http://121.199.34.113:8080`。
+当前后端的 CORS 配置（`application.properties`）限制允许的来源为 `http://你的服务器IP:8080`。
 
-如果你的前端通过 nginx 80 端口访问，请求来源变成 `http://121.199.34.113`，**需要修改**：
+如果你的前端通过 nginx 80 端口访问，请求来源变成 `http://你的服务器IP`，**需要修改**：
 
 ```properties
-spring.web.cors.allowed-origins=http://121.199.34.113
+spring.web.cors.allowed-origins=http://你的服务器IP
 ```
 
 修改后重新打包并上传、重启服务。
@@ -228,10 +228,10 @@ firewall-cmd --add-port=8080/tcp --permanent && firewall-cmd --reload
 mvn clean package -DskipTests
 
 # 2. 上传
-scp target/student-report-backend-0.0.1-SNAPSHOT.jar root@121.199.34.113:/opt/
+scp target/student-report-backend-0.0.1-SNAPSHOT.jar root@你的服务器IP:/opt/
 
 # 3. 重启服务
-ssh root@121.199.34.113 "systemctl restart student-report-backend"
+ssh root@你的服务器IP "systemctl restart student-report-backend"
 ```
 
 ---

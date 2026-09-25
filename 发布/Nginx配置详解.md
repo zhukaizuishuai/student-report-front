@@ -95,7 +95,7 @@ location /api {
 
 **为什么需要？**
 
-前端请求 `/api/reports`，浏览器只会把请求发到 `http://121.199.34.113/api/reports`。如果没有反向代理，nginx 会尝试在 `/usr/share/nginx/html` 下找 `api/reports` 这个文件，自然找不到，返回 404。
+前端请求 `/api/reports`，浏览器只会把请求发到 `http://你的服务器IP/api/reports`。如果没有反向代理，nginx 会尝试在 `/usr/share/nginx/html` 下找 `api/reports` 这个文件，自然找不到，返回 404。
 
 `proxy_pass` 告诉 nginx：遇到 `/api` 开头的请求，转发给后端的 `localhost:8080`。
 
@@ -161,7 +161,7 @@ gzip_min_length 1024;
                       → Vue 读取 URL，渲染 TodoList 页面
 ```
 
-如果没有 `try_files`，直接访问 `http://121.199.34.113/todo` 会返回 404。
+如果没有 `try_files`，直接访问 `http://你的服务器IP/todo` 会返回 404。
 
 ### 配置生效流程
 
